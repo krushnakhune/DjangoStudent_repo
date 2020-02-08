@@ -1,0 +1,42 @@
+{% extends 'testapp/master.html' %}
+<html>
+    {% block content %}
+        <h2 class="text-primary text-center">Student Details....</h2>
+        <table class="table table-bordered table-secondary table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Roll No.</th>
+                    <th>FName</th>
+                    <th>Lname</th>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Marathi</th>
+                    <th>Hindi</th>
+                    <th>English</th>
+                    <th>Math</th>
+                    <th>Science</th>
+                    <th>Social</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in students %}
+                    <tr>
+                        <td>{{i.student_roll}}</td>
+                        <td>{{i.student_fname}}</td>
+                        <td>{{i.student_lname}}</td>
+                        <td>{{i.student_class}}</td>
+                        <td>{{i.student_section}}</td>
+                        <td>{{i.telugu}}</td>
+                        <td>{{i.hindi}}</td>
+                        <td>{{i.english}}</td>
+                        <td>{{i.maths}}</td>
+                        <td>{{i.science}}</td>
+                        <td>{{i.social}}</td>
+                        <td><a class="btn btn-success" href="/edit/{{i.id}}">Edit</a><a class="btn btn-danger" href="/delete/{{i.id}}">Delete</a> </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-info" href="add_student">Add Student</a><br/>
+    {% endblock %}

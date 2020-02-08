@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>.....</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+        .foot{
+        background-color:black;
+        color:white;
+        margin-left:100px;
+        margin-right:100px;
+        }
+        #para{
+        margin-top:20px;
+        }
+        body{
+        background-color:lightcyan;
+        }
+        nav{
+        background-color:orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav nav-bar">
+            <a href="home" class="nav-link nav-item">Home</a>
+            <a href="add_student" class="nav-link nav-item">Add Student</a>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="foot">
+        <p id="para" class="text-center">This site is under copy right 2020 by K2soft</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{% extends 'testapp/master.html' %}
+<html>
+    {% block content %}
+    <style>
+        form{
+        border:1px solid black;
+        border-radius:20px;
+        background-color:lightpink;
+        padding:10px;
+        }
+    </style>
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <h3 class="text-center">Please Add Student Info Here...</h3>
+                <form action="/create" method="POST">
+                    {% csrf_token %}
+                    <label>Roll No.</label>
+                    <input type="number" name="roll" class="form-control">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>First Name:</label>
+                            <input type="text" name="fname" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Last Name:</label>
+                            <input type="text" name="lname" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Class</label>
+                            <input type="text" name="cls" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Section</label>
+                            <input type="text" name="sec" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Marathi</label>
+                            <input type="number" name="telugu" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Hindi</label>
+                            <input type="number" name="hindi" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <label>English</label>
+                          <input type="number" name="english" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Math</label>
+                            <input type="number" name="math" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Science</label>
+                            <input type="number" name="science" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Social</label>
+                            <input type="number" name="social" class="form-control">
+                        </div>
+                    </div><br/>
+                    <center>
+                        <input type="submit" value="Add" class="btn btn-success">
+                        <input type="reset" value="Clear" class="btn btn-danger">
+                    </center>
+                </form>
+            </div>
+        </div>
+    {% endblock %}

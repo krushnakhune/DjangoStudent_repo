@@ -1,0 +1,84 @@
+{% extends 'testapp/master.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit Studetnt</title>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        <style>
+        form{
+        border:1px solid black;
+        border-radius:20px;
+        background-color:lightpink;
+        padding:10px;
+        }
+    </style>
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                    <h3 class="text-center">Please Update Student Info Here...</h3>
+                    <form method="POST" action="/update/{{students.id}}">
+                        {% csrf_token %}
+                        <label>Roll Number:</label>
+                        <input type="number" name="roll" class="form-control" value="{{students.student_roll}}">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>First Name:</label>
+                                <input type="text" name="fname" class="form-control" value="{{students.student_fname}}">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Last Name:</label>
+                                <input type="text" name="lname" class="form-control" value="{{students.student_lname}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <label>Class:</label>
+                              <input type="text" name="cls" class="form-control" value="{{students.student_class}}">
+                            </div>
+                            <div class="col-md-6">
+                              <label>Section:</label>
+                              <input type="text" name="sec" class="form-control" value="{{students.student_section}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <label>Marathi:</label>
+                              <input type="number" name="telugu" class="form-control" value="{{students.telugu}}">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Hindi:</label>
+                                <input type="number" name="hindi" class="form-control" value="{{students.hindi}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <label>English:</label>
+                              <input type="number" name="english" class="form-control" value="{{students.english}}">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Maths</label>
+                                <input type="number" name="maths" class="form-control" value="{{students.maths}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <label>Science:</label>
+                              <input type="text" name="science" class="form-control" value="{{students.science}}">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Social:</label>
+                                <input type="number" name="social" class="form-control" value="{{students.social}}">
+                            </div>
+                        </div><br/>
+                        <center>
+                            <input type="submit" value="Update" class="btn btn-success">
+                        </center>
+                    </form>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+</body>
+</html>
